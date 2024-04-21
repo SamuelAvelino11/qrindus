@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Ferramentas</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Ferramentas</h2>
+        <form action="submit" method="post">{% csrf_token %}
+            <div class="row mb-3">
+                <div class="col">
+                   <input type="text" class="form-control" name="item" placeholder="Item">
+                </div>
+                <div class="col">
+                    <select class="form-select" aria-label="Cor" name="cor">
+                        <option selected>cores</option>
+                        <option value="1">V</option>
+                        <option value="2">VV</option>
+                        <option value="3">VVE</option>
+                        <option value="4">AZ</option>
+                        <option value="5">AM</option>
+                        <option value="6">VD</option>
+                        <option value="7">LR</option>
+                        <option value="8">VP</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-select" aria-label="Grupo" name="grupo">
+                        <option selected>Grupo</option>
+                        <option value="voluta">Voluta</option>
+                        <option value="voluta">Reta</option>
+                        <option value="voluta">Cotovelo</option>
+                        <option value="voluta">Reducão</option>
+                        <option value="voluta">Espiral</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" name="montadora" PLACEHOLDER="Montadora">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="aplicacao" PLACEHOLDER="Aplicacão">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" name="quantidade" PLACEHOLDER="Quantidade">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <textarea class="form-control" aria-label="Observacao" name="observacoes"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Primary</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
