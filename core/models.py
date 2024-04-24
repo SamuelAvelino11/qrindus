@@ -15,7 +15,7 @@ class ferramentas(models.Model):
     observacoes = models.CharField(max_length=255, null=True)
 
     class Meta:
-        db_table: 'ferramentas'
+        db_table = 'ferramentas'
 
 
 class PecasFaltantes(models.Model):
@@ -27,7 +27,7 @@ class PecasFaltantes(models.Model):
     observacoes = models.CharField(max_length=255, null=True)
 
     class Meta:
-        db_table: 'faltantes'
+        db_table = 'faltantes'
 
 class Pecas(models.Model):
     id = models.AutoField(primary_key=True)
@@ -40,7 +40,7 @@ class Pecas(models.Model):
     observacoes = models.CharField(max_length=255, null=True)
 
     class Meta:
-        db_table: 'pecas'
+        db_table = 'pecas'
 
 
 
