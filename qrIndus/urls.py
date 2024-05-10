@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.view_login),
     path('menu/', views.menu),
-    path('crud/', views.views_crudFerr),
+    path('menu/crud/', views.views_crudFerr),
     path('crud/submit', views.submit_Ferr)
 ]

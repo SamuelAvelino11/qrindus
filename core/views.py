@@ -38,4 +38,6 @@ def submit_Ferr(request):
         dados = ferramentas.objects.all()
     return render(request, 'crud.html', {'dados':dados})
 
+def submitPedido(request):
+    if request.method == 'POST':
 

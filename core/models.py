@@ -47,3 +47,19 @@ class Pecas(models.Model):
 class Photo(models.Model):
     image = models.ImageField(upload_to='photo/'),
     description = models.TextField(max_length=255, null=True)
+
+class faltantes(models.Model):
+    id = models.AutoField(primary_key=True)
+    peca = models.TextField(max_length=100, null=False)
+    cor = models.TextField(max_length=20, null=True)
+    qtd = models.IntegerField(1000)
+
+class pedidosfaltantes(models.Model):
+    id = models.AutoField(primary_key=True)
+    numerodopedido = models.TextField(null=False)
+    dataLancamento = models.DateField(verbose_name=None)
+    pecas = models.ManyToManyField(faltantes)
+
+    class Meta:
+        db_table = 'pedidosfaltantes'
+
