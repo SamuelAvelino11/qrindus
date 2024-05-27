@@ -1,7 +1,8 @@
 import requests
 from django.shortcuts import render, redirect
-from .models import Photo
+from .models import Photo, PedidoDeSeparacao
 from .models import ferramentas
+from .models import faltantes
 
 # Create your views here.
 def view_login(request):
@@ -38,6 +39,22 @@ def submit_Ferr(request):
         dados = ferramentas.objects.all()
     return render(request, 'crud.html', {'dados':dados})
 
+def Pedido(request):
+    return render(request, 'cad_pedidos.html')
+
 def submitPedido(request):
     if request.method == 'POST':
+        numero = request.POST.get('numero')
+        observacoes = request.POST.get('observacao')
+        dataRecebimento = request.POST.get('dataRecebimento')
+        dataEntrega = request.POST.get('dataEntrega')
 
+        numPed = PedidoDeSeparacao(
+            numero = numero,
+            observacoes = observacoes,
+            dataRecebimento = dataRecebimento,
+            dataEntrega = dataEntrega
+        )
+        numPed.save()
+        dados = PedidoDeSeparacao.objects.all()
+    return render(request,'Pedidos.html', {'dados':dados})

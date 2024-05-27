@@ -23,5 +23,7 @@ urlpatterns = [
     path('', views.view_login),
     path('menu/', views.menu),
     path('menu/crud/', views.views_crudFerr),
-    path('crud/submit', views.submit_Ferr)
+    path('crud/submit', views.submit_Ferr),
+    path('pedidos/', views.Pedido),
+    path('pedidos/submit', views.submitPedido)
 ]
